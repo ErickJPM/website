@@ -1,0 +1,64 @@
+$def with(result,tam)
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link href="static/assets/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="/001">Mostrar alumnos</a>
+  <a class="navbar-brand" href="/002">Insertar un nuevo alumno</a>
+  <a class="navbar-brand" href="/004">Buscar un alumno</a>
+  
+  <a class="navbar-brand" href="/005">Actualizar</a>
+  <a class="navbar-brand" href="/">MENU PRINCIPAL</a>
+</nav>
+<body>
+  <h1 class="h1">Delete</h1>
+    <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Primer apellido</th>
+            <th scope="col">Segundo Apellido</th>
+            <th scope="col">Edad</th>
+            <th scope="col">Fecha de Nacimiento</th>
+            <th scope="col">sexo</th>
+            <th scope="col">Estado civil</th>
+            <th scope="col">borrar</th>
+          </tr>
+        </thead>
+        <tbody>
+          $for i in range(0,tam):
+            <tr>
+              <td>$result[i]['id_persona']</td>
+              <td>$result[i]['matricula']</td>
+              <td>$result[i]['nombre']</td>
+              <td>$result[i]['ap_uno']</td>
+              <td>$result[i]['ap_dos']<td>
+              <td>$result[i]['edad']</td>
+              <td>$result[i]['fec_nac']</td>
+              <td>$result[i]['genero']</td>
+              <td>$result[i]['estado_civil']</td>
+              <form method="POST" action="">
+                <input type="hidden" name="borrar" value= $result[i]['id_persona']></input>
+                <td><button type="submit"><img src="static/assets/basura.png" height="60" width="50"></button></td>
+              </form>
+              
+              
+            </tr>
+      </table>
+      <main role="main" class="inner cover">
+        <p class="lead">
+
+          <a href="/" class="btn btn-lg btn-secondary">regresar</a>
+     
+        </p>
+      
+    
+</body>
+</html>
