@@ -52,6 +52,7 @@ class Alumnos():
            
             for row in self.cursor:
                 r = {
+                    nuevalinea:malhecha,
                     'id_persona':row[0],
                     'nombre':row[1],
                     'ap_uno': row[2],
